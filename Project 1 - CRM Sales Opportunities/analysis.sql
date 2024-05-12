@@ -22,8 +22,8 @@ ORDER BY 4 DESC;
 
 -- How is each sales team performing compared to the rest?
 
-
-SELECT s.regional_office, s.manager,
+WITH teams_summary AS
+(SELECT s.regional_office, s.manager,
       SUM(CASE WHEN p.deal_stage = 'Won' THEN 1 ELSE 0 END) won_deals,
       SUM(CASE WHEN p.deal_stage = 'Won' THEN p.close_value ELSE 0 END) won_deals_value,
       SUM(CASE WHEN p.deal_stage = 'Engaging' THEN 1 ELSE 0 END) engaging_deals,
@@ -33,7 +33,11 @@ FROM project_1.sales_teams s
 LEFT JOIN project_1.sales_pipeline p
 ON s.sales_agent = p.sales_agent
 GROUP BY s.regional_office, s.manager
-ORDER BY 3 DESC;
+ORDER BY 3 DESC)
+SELECT *, ROUND(100.00 * won_deals / (won_deals + lost_deals), 2) AS win_pct
+FROM teams_summary;
+
+
 
 -- Top agent by won deals percentage vs lost deals
 
