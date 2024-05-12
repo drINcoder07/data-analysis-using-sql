@@ -15,7 +15,34 @@ Here are the recommended insights to uncover from the datasets:
 
 ### ANALYSIS
 
-#### TOP Sales Agent
+#### TOP Sales Agent by Total Value of Won deals
 | regional_office | manager | sales_agent | won_deals | value_won_deals |
 | ----------- | ----------- | ----------- | ----------- | ----------- |
 | Central | Melvin Marxen | Darcel Schlecht | 349 | 1153214 |
+
+#### TOP Sales Agent by Percentage of Won Deals vs Lost Deals
+| regional_office | manager | sales_agent | won_deals_pct | lost_deals_pct |
+| ----------- | ----------- | ----------- | ----------- | ----------- |
+| West | Celia Rouche | Hayden Neloms | 70.39 | 29.61 |
+
+#### Sales Agent most number of engaging deals
+| regional_office | manager | sales_agent | engaging_deals | 
+| ----------- | ----------- | ----------- | ----------- |
+| West | Celia Rouche | Vicki Laflamme | 104 |
+
+#### Sales Agent with the most prospects 
+| regional_office | manager | sales_agent | prospecting_deals | 
+| ----------- | ----------- | ----------- | ----------- |
+| Central | Melvin Marxen | Darcel Schlecht | 110 | 
+
+#### Sales Agents Lagging Behind
+| regional_office | manager | sales_agent | won_deals | engaging_deals | lost_deals | prospecting_deals | 
+| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
+| Central | Melvin Marxen | Mei-Mei Johns | 0 | 0 | 0 | 0 | 
+| East | Rocco Neubert | Natalya Ivanova | 0 | 0 | 0 | 0 | 
+| East | Cara Losch | Elizabeth Anderson | 0 | 0 | 0 | 0 | 
+| West | Summer Sewald | Carl Lin | 0 | 0 | 0 | 0 | 
+| West | Celia Rouche | Carol Thompson | 0 | 0 | 0 | 0 | 
+
+
+
