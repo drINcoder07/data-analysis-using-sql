@@ -11,3 +11,11 @@ Here are the recommended insights to uncover from the datasets:
 - Are any sales agents lagging behind?
 - Can you identify any quarter-over-quarter trends?
 - Do any products have better win rates?
+
+
+### ANALYSIS
+
+#### TOP Sales Agent
+| regional_office | manager | sales_agent | won_deals | value_won_deals |
+| ----------- | ----------- | ----------- | ----------- | ----------- |
+| Central | Melvin Marxen | Darcel Schlecht | 349 | 1153214 |
