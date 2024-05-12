@@ -17,7 +17,7 @@ Here are the recommended insights to uncover from the datasets:
 
 #### Sales Teams Analysis
 | regional_office | manager |  won_deals | won_deals_value | engaging_deals | lost_deals | prospecting_deals | win_pct |
-| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
+| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
 | Central   | Melvin Marxen     | 882 | 2251930 | 215 | 536 | 296 | 62.20 |
 | West      | Summer Sewald     | 828 | 1964750 | 414 | 459 | 0 | 64.34 |
 | Central   | Dustin Brinkmann  | 747 | 1094363 | 193 | 439 | 204 | 62.98 |
