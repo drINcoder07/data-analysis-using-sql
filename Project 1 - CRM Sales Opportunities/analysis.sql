@@ -72,9 +72,10 @@ WHERE won_deals_value = 0;
 
 SELECT EXTRACT(YEAR FROM close_date) AS year,
 EXTRACT(QUARTER FROM close_date) AS quarter,
-COUNT(*) AS won_deals
+COUNT(*) FILTER(WHERE deal_stage = 'Won') AS won_deals,
+COUNT(*) FILTER(WHERE deal_stage = 'Lost') AS lost_deals
 FROM project_1.sales_pipeline
-WHERE deal_stage = 'Won'
+WHERE close_date IS NOT NULL
 GROUP BY 1, 2
 ORDER BY 1, 2;
 
