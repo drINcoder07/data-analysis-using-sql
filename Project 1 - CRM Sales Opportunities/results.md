@@ -62,14 +62,69 @@ Here are the recommended insights to uncover from the datasets:
 
 #### QUARTER-OVER-QUARTER TRENDS
 
-| year | quarter | won_deals | lost_deals |
-| ----------- | ----------- | ----------- | ----------- | 
-| 2017 | 1 | 531 | 116 |
-| 2017 | 1 | 1254 | 778 |
-| 2017 | 1 | 1257 | 790 |
-| 2017 | 1 | 1196 | 789 |
+| year | quarter | won_deals | lost_deals | total_close_value
+| ----------- | ----------- | ----------- | ----------- | ----------- | 
+| 2017 | 1 | 531 | 116 | 1134672 |
+| 2017 | 2 | 1254 | 778 | 3086111 |
+| 2017 | 3 | 1257 | 790 | 2982255 |
+| 2017 | 4 | 1196 | 789 | 2802496 |
 
 
-#### Insights:
+##### Insights:
 - Most won deals occurred on the third quarter of 2017 (1257) as well as the most count of lost deals (790). First quarter has the lowest in both categories.
 - Trend starts lowest in first quarter, leaps high to second and peaks at third, then lowers at the fourth quarter.
+- Second Quarter has the highest revenue from deals (3086111).
+
+#### PRODUCTS ANALYSIS
+
+| product | won_deals | won_deals_pct | total_close_value |
+| ----------- | ----------- | ----------- | ----------- | 
+| MG Special | 793 | 64.84 | 43768 |
+| GTX Plus Pro | 479 | 64.30 | 2629651 |
+| GTX Basic | 915 | 63.72 | 499263 |
+| GTXPro | 729 | 63.56 | 3510578 |
+| GTX Plus Basic | 653 | 62.13 | 705275 |
+| MG Advanced  | 654 | 60.33 | 2216387 |
+| GTK 500 | 15 | 60.00 | 400612 |
+
+##### Insights:
+- GTX Basic has the most won deals (915).
+- MG Special has the highest win percentage vs won and lost deals combined (64.84 %)
+- GTX Pro has the highest Total Close Value (3,510,578).
+
+
+#### SECTOR AND ACCOUNTS ANALYSIS
+
+#### Top 5 Accounts with most won deals
+| account | sector | office_location | won_deals |
+| ----------- | ----------- | ----------- | ----------- |
+| Kan-code | software | United States | 115 | 
+| Hottechi | technology | Korea | 111 | 
+| Konex | technology | United States | 108 | 
+| Condax | medical | United States | 105 | 
+| Rangreen | technology | Panama | 75 |
+| ......... | ......... | ......... | ......... |
+| Sumace | retail | Romania | 23 |
+
+#### Top 5 Accounts with highest total close value
+| account | sector | office_location | total_close_value |
+| ----------- | ----------- | ----------- | ----------- |
+| Kan-code | software | United States | 341455 | 
+| Konex | technology | United States | 269245 | 
+| Condax | medical | United States | 206410 |
+| Cheers | entertainment | United States | 198020 | 
+| Hottechi | technology | Korea | 194957 | 
+
+##### Other Insights:
+- Rangreen from Panama has the highest percentage of winning in deals (75 %) vs combined won and lost deals. Statholdings has the least (53.13 %).
+- Retail Sector has the highest count of won deals (799), lost deals (468), and highest total close value (1867528). Employment Sector has the lowest win (179) and lost (107) deals, and lowest total close value (436174).
+- Marketing has the highest percentage of won vs lost deals (64.85 %) while Finance has the lowest (61.17 %).
+
+
+### RECOMMENDATIONS:
+1. Focus on the Retail Sector as it produces the highest number of won deals and revenue.
+2. Promote GTXPro as it has the highest source of revenue from deals.
+3. Verify status of lowest performing sales agents.
+
+
+
