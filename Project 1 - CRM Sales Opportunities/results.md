@@ -60,5 +60,16 @@ Here are the recommended insights to uncover from the datasets:
 | West | Summer Sewald | Carl Lin | 0 | 0 | 0 | 0 | 
 | West | Celia Rouche | Carol Thompson | 0 | 0 | 0 | 0 | 
 
+#### QUARTER-OVER-QUARTER TRENDS
+
+| year | quarter | won_deals | lost_deals |
+| ----------- | ----------- | ----------- | ----------- | 
+| 2017 | 1 | 531 | 116 |
+| 2017 | 1 | 1254 | 778 |
+| 2017 | 1 | 1257 | 790 |
+| 2017 | 1 | 1196 | 789 |
 
 
+#### Insights:
+- Most won deals occurred on the third quarter of 2017 (1257) as well as the most count of lost deals (790). First quarter has the lowest in both categories.
+- Trend starts lowest in first quarter, leaps high to second and peaks at third, then lowers at the fourth quarter.
