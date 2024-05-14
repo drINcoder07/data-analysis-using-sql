@@ -73,7 +73,8 @@ WHERE won_deals_value = 0;
 SELECT EXTRACT(YEAR FROM close_date) AS year,
 EXTRACT(QUARTER FROM close_date) AS quarter,
 COUNT(*) FILTER(WHERE deal_stage = 'Won') AS won_deals,
-COUNT(*) FILTER(WHERE deal_stage = 'Lost') AS lost_deals
+COUNT(*) FILTER(WHERE deal_stage = 'Lost') AS lost_deals,
+SUM(close_value) AS total_close_value
 FROM project_1.sales_pipeline
 WHERE close_date IS NOT NULL
 GROUP BY 1, 2
@@ -82,11 +83,43 @@ ORDER BY 1, 2;
 -- Do any products have better win rates?
 
 SELECT product,
-COUNT(*) AS won_deals
+COUNT(*) FILTER (WHERE deal_stage = 'Won') AS won_deals,
+ROUND(100.00 * (COUNT(*) FILTER (WHERE deal_stage = 'Won')) / (COUNT(*) FILTER (WHERE deal_stage IN ('Won', 'Lost'))), 2) AS won_deals_pct,
+SUM(close_value) AS total_close_value
 FROM project_1.sales_pipeline
-WHERE deal_stage = 'Won'
 GROUP BY 1
-ORDER BY 2 DESC;
+ORDER BY 4 DESC;
 
+-- Accounts Analysis
+
+SELECT a.sector, 
+COUNT(s.*) FILTER(WHERE deal_stage = 'Won') AS won_deals,
+COUNT(s.*) FILTER(WHERE deal_stage = 'Lost') AS lost_deals,
+COUNT(s.*) FILTER(WHERE deal_stage = 'Engaging') AS engaging_deals,
+COUNT(s.*) FILTER(WHERE deal_stage = 'Prospecting') AS prospecting_deals,
+ROUND(100.00 * (COUNT(s.*) FILTER (WHERE s.deal_stage = 'Won')) / (COUNT(s.*) FILTER (WHERE s.deal_stage IN ('Won', 'Lost'))), 2) AS won_deals_pct,
+SUM(s.close_value) AS total_close_value
+FROM project_1.accounts a
+LEFT JOIN project_1.sales_pipeline s
+ON a.account = s.account
+GROUP BY 1
+ORDER BY 7 DESC
+LIMIT 5;
+
+
+
+SELECT a.account, a.sector, a.office_location, 
+COUNT(s.*) FILTER(WHERE deal_stage = 'Won') AS won_deals,
+COUNT(s.*) FILTER(WHERE deal_stage = 'Lost') AS lost_deals,
+COUNT(s.*) FILTER(WHERE deal_stage = 'Engaging') AS engaging_deals,
+COUNT(s.*) FILTER(WHERE deal_stage = 'Prospecting') AS prospecting_deals,
+ROUND(100.00 * (COUNT(s.*) FILTER (WHERE s.deal_stage = 'Won')) / (COUNT(s.*) FILTER (WHERE s.deal_stage IN ('Won', 'Lost'))), 2) AS won_deals_pct,
+SUM(s.close_value) AS total_close_value
+FROM project_1.accounts a
+LEFT JOIN project_1.sales_pipeline s
+ON a.account = s.account
+GROUP BY 1, 2, 3
+ORDER BY 9 DESC
+LIMIT 5;
 
 
